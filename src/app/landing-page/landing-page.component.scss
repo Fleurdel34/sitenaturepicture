@@ -1,0 +1,37 @@
+.landing-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 25%;
+    height: 25%;
+    margin-bottom: 50px;
+}
+
+.landing-links {
+    width: 100%;
+    text-align: center;
+}
+
+button{
+    font-size: 20px;
+}
+
+.premier_paragraphe{
+  margin-top: 1rem;
+  width: 30%;
+}
+
+.second_paragraphe{
+  margin-top: 1rem;
+  width: 30%;
+}
+
+.information{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 30%;
+}

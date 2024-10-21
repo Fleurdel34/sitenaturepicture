@@ -1,0 +1,33 @@
+header{
+    text-align: center;
+    background-color: aquamarine;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img{
+    width:150px;
+    height: 150px;
+}
+
+a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.active {
+    color: #666;
+    text-decoration: underline;
+}
+
+button{
+    background-color: rgb(136, 231, 172);
+}
