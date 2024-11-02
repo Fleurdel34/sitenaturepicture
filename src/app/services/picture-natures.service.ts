@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { PictureNature } from "../models/picture-nature";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {FormGroup} from "@angular/forms";
 
 
 @Injectable({
@@ -18,4 +19,6 @@ export class PictureNaturesService{
     getPictureNatureById(pictureNatureId:number): Observable<PictureNature>{
       return this.http.get<PictureNature>(`http://localhost:3000/pictureNatures/${pictureNatureId}`);
     }
+
+
 }

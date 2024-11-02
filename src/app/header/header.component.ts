@@ -12,11 +12,11 @@ export class HeaderComponent implements OnInit{
   constructor(private router: Router){}
 
   ngOnInit(): void {
-    
+
   }
 
   onAddNewFaceSnap(): void{
-    this.router.navigateByUrl('/create');
+    this.router.navigateByUrl('/newNaturePicture');
   }
 
 }

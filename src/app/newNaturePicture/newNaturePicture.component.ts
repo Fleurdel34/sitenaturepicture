@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {map, Observable} from "rxjs";
 import {PictureNature} from "../models/picture-nature";
-import {AsyncPipe, DatePipe, NgIf, UpperCasePipe} from "@angular/common";
+import {AsyncPipe, DatePipe, NgIf, NgOptimizedImage, UpperCasePipe} from "@angular/common";
 import {Router, RouterLink} from "@angular/router";
 import {PictureNaturesService} from "../services/picture-natures.service";
 
@@ -15,10 +15,11 @@ import {PictureNaturesService} from "../services/picture-natures.service";
     AsyncPipe,
     UpperCasePipe,
     DatePipe,
-    RouterLink
+    RouterLink,
+    NgOptimizedImage
   ],
-  templateUrl: './new-nature-picture.component.html',
-  styleUrl: './new-nature-picture.component.scss'
+  templateUrl: './newNaturePicture.component.html',
+  styleUrl: './newNaturePicture.component.scss'
 })
 export class NewNaturePictureComponent implements OnInit{
 
@@ -26,7 +27,7 @@ export class NewNaturePictureComponent implements OnInit{
   naturePicturePreview$!: Observable<PictureNature>;
   urlRegex!:RegExp;
 
-  constructor(private formBuilder:FormBuilder, private pictureNatureService:PictureNaturesService, private router:Router){}
+  constructor(private formBuilder:FormBuilder, private router:Router){}
 
   ngOnInit(): void {
     this.natureForm=this.formBuilder.group({
@@ -34,7 +35,7 @@ export class NewNaturePictureComponent implements OnInit{
       description:[null, Validators.required],
       image:[null, [Validators.required, Validators.pattern(this.urlRegex)]]
     }, {
-      updateOn: 'blur'
+     updateOn: 'blur'
     });
 
     this.naturePicturePreview$ = this.natureForm.valueChanges.pipe(map(formValue =>({
@@ -46,8 +47,9 @@ export class NewNaturePictureComponent implements OnInit{
   }
 
   onSubmitForm():void{
-    //this.pictureNatureService.addNaturePicture({formValue: this.natureForm.value});
-    this.router.navigateByUrl('picturenature');
+    let formValue=this.natureForm.value;
+    //this.pictureNatureService.addNaturePicture(formValue);
+    this.router.navigateByUrl('');
   }
 
 }
