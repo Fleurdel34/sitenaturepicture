@@ -1,12 +1,18 @@
 <section>
   <h2>NOUVEAU NATUREPICTURE</h2>
   <form [formGroup]="natureForm">
-    <label for="title">Titre</label>
-    <input id="title" type="text" formControlName="title">
-    <label for="description">Description</label>
-    <textarea id="description" type="text" formControlName="description" rows="4"></textarea>
-    <label for="image">URL de l'image</label>
-    <input id="image" type="text" formControlName="image">
-    <button type="submit" (click)="onSubmitForm()" [disabled]="natureForm.invalid">Enregistrer</button>
+    <div>
+      <label for="title">Titre:</label>
+      <input id="title" type="text" formControlName="title">
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" type="text" formControlName="description" rows="5"></textarea>
+    </div>
+    <div>
+      <label for="image">Insérer une image:</label>
+      <input id="image" type="file" formControlName="image">
+      <button type="submit" (click)="onSubmitForm()" [disabled]="natureForm.invalid">Enregistrer</button>
+    </div>
   </form>
 </section>
