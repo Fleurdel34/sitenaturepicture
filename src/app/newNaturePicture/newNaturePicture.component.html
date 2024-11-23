@@ -1,6 +1,6 @@
 <section>
   <h2>NOUVEAU NATUREPICTURE</h2>
-  <form [formGroup]="natureForm">
+  <form [formGroup]="natureForm" enctype="multipart/form-data" method="post" action="">
     <div>
       <label for="title">Titre:</label>
       <input id="title" type="text" formControlName="title">
@@ -11,7 +11,7 @@
     </div>
     <div>
       <label for="image">Insérer une image:</label>
-      <input id="image" type="file" formControlName="image">
+      <input id="image" type="file" formControlName="image" accept=".jpg, .pdf, .jpeg, .svg, .png" size="5000000">
       <button type="submit" (click)="onSubmitForm()" [disabled]="natureForm.invalid">Enregistrer</button>
     </div>
   </form>

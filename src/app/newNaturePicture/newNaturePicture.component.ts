@@ -20,6 +20,9 @@ export class NewNaturePictureComponent implements OnInit{
 
   constructor(private formBuilder:FormBuilder, private router:Router){}
 
+  //mettre en place une regex pour l'input sur le fichier pour limiter les extensions
+  //voir le projet sur le live la sécurité du code avec purify
+
   ngOnInit(): void {
     this.natureForm=this.formBuilder.group({
       title:[null, Validators.required],
