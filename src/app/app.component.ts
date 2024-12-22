@@ -6,9 +6,9 @@ import {AnimalComponent} from "./animal/animal.component";
 import {FlowerComponent} from "./flower/flower.component";
 import {HomeComponent} from "./home/home.component";
 import {LandingPageComponent} from "./landing-page/landing-page.component";
-import {NewNaturePictureComponent} from "./newNaturePicture/newNaturePicture.component";
 import {SceneryComponent} from "./scenery/scenery.component";
 import {VegetalComponent} from "./vegetal/vegetal.component";
+import {FormComponent} from "./form/form.component";
 
 
 
@@ -22,7 +22,7 @@ import {VegetalComponent} from "./vegetal/vegetal.component";
     FlowerComponent,
     HomeComponent,
     LandingPageComponent,
-    NewNaturePictureComponent,
+    FormComponent,
     SceneryComponent,
     VegetalComponent],
   templateUrl: './app.component.html',

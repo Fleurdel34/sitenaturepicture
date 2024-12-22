@@ -1,24 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {map, Observable} from "rxjs";
 import {PictureNature} from "../models/picture-nature";
 import {Router} from "@angular/router";
+import {PictureNaturesService} from "../services/picture-natures.service";
 
 @Component({
-  selector: 'app-new-nature-picture',
+  selector: 'app-form',
   standalone: true,
-  imports: [
-    ReactiveFormsModule],
-  templateUrl: './newNaturePicture.component.html',
-  styleUrl: './newNaturePicture.component.scss'
+    imports: [
+        FormsModule,
+        ReactiveFormsModule
+    ],
+  templateUrl: './form.component.html',
+  styleUrl: './form.component.scss'
 })
-export class NewNaturePictureComponent implements OnInit{
+export class FormComponent implements OnInit{
 
   natureForm!: FormGroup;
   naturePicturePreview$!: Observable<PictureNature>;
   urlRegex!:RegExp;
 
-  constructor(private formBuilder:FormBuilder, private router:Router){}
+  constructor(private formBuilder:FormBuilder, private router:Router, private pictureNatureService:PictureNaturesService){}
 
   //mettre en place une regex pour l'input sur le fichier pour limiter les extensions
   //voir le projet sur le live la sécurité du code avec purify
@@ -29,21 +32,21 @@ export class NewNaturePictureComponent implements OnInit{
       description:[null, Validators.required],
       image:[null, [Validators.required, Validators.pattern(this.urlRegex)]]
     }, {
-    updateOn: 'blur'
-    });
+      updateOn: 'blur'
+    })
 
     this.naturePicturePreview$ = this.natureForm.valueChanges.pipe(map(formValue =>({
       ...formValue,
-      createdAt: new Date(),
-      id:0
-    }))
+        createdAt: new Date(),
+        id:0
+      }))
     );
   }
 
   onSubmitForm():void{
     let formValue=this.natureForm.value;
-    //this.pictureNatureService.addNaturePicture(formValue);
-    this.router.navigateByUrl('');
+    this.pictureNatureService.addNaturePicture(formValue);
+    this.router.navigateByUrl('/home');
   }
 
 }

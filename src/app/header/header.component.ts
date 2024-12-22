@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit{
   }
 
   onAddNewFaceSnap(): void{
-    this.router.navigateByUrl('/newNaturePicture');
+    this.router.navigateByUrl('/form');
   }
 
 }
