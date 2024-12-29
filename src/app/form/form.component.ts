@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, inject} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {map, Observable} from "rxjs";
 import {PictureNature} from "../models/picture-nature";
@@ -21,7 +21,10 @@ export class FormComponent implements OnInit{
   naturePicturePreview$!: Observable<PictureNature>;
   urlRegex!:RegExp;
 
-  constructor(private formBuilder:FormBuilder, private router:Router, private pictureNatureService:PictureNaturesService){}
+
+  constructor(private formBuilder:FormBuilder, private router:Router, private pictureNaturesService: PictureNaturesService){
+
+  }
 
   //mettre en place une regex pour l'input sur le fichier pour limiter les extensions
   //voir le projet sur le live la sécurité du code avec purify
@@ -43,9 +46,9 @@ export class FormComponent implements OnInit{
     );
   }
 
-  onSubmitForm():void{
+  onSubmit(){
     let formValue=this.natureForm.value;
-    this.pictureNatureService.addNaturePicture(formValue);
+    this.pictureNaturesService.addNaturePicture(formValue);
     this.router.navigateByUrl('/home');
   }
 
