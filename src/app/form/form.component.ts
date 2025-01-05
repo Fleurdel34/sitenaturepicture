@@ -48,6 +48,7 @@ export class FormComponent implements OnInit{
 
   onSubmit(){
     let formValue=this.natureForm.value;
+    console.log(formValue);
     this.pictureNaturesService.addNaturePicture(formValue);
     this.router.navigateByUrl('/home');
   }
