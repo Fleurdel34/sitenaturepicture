@@ -1,6 +1,6 @@
 import {Component, OnInit, inject} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {map, Observable} from "rxjs";
+import {empty, map, Observable} from "rxjs";
 import {PictureNature} from "../models/picture-nature";
 import {Router} from "@angular/router";
 import {PictureNaturesService} from "../services/picture-natures.service";
@@ -20,7 +20,7 @@ export class FormComponent implements OnInit{
   natureForm!: FormGroup;
   naturePicturePreview$!: Observable<PictureNature>;
   urlRegex!:RegExp;
-
+  file!:FileList;
 
   constructor(private formBuilder:FormBuilder, private router:Router, private pictureNaturesService: PictureNaturesService){
 
@@ -46,11 +46,24 @@ export class FormComponent implements OnInit{
     );
   }
 
+  onFileSelected(event:Event){
+      const target = event.target as HTMLInputElement;
+      const upLoad = target.files;
+      if(upLoad){
+      this.file = upLoad;
+      }
+  }
+
   onSubmit(){
-    let formValue=this.natureForm.value;
-    console.log(formValue);
-    this.pictureNaturesService.addNaturePicture(formValue);
-    this.router.navigateByUrl('/home');
+    let fileUpLoad = this.file[0];
+    if(fileUpLoad !== null){
+      let formValue=this.natureForm.value;
+      console.log(fileUpLoad);
+      console.log(formValue);
+      this.pictureNaturesService.addNaturePicture(formValue, fileUpLoad);
+      this.router.navigateByUrl('/home');
+    }
+
   }
 
 }
