@@ -20,13 +20,12 @@ export class FormComponent implements OnInit{
   natureForm!: FormGroup;
   naturePicturePreview$!: Observable<PictureNature>;
   urlRegex!:RegExp;
-  file!:FileList;
 
   constructor(private formBuilder:FormBuilder, private router:Router, private pictureNaturesService: PictureNaturesService){
 
   }
 
-  //mettre en place une regex pour l'input sur le fichier pour limiter les extensions
+  //mettre en place la regex pour les extensions
   //voir le projet sur le live la sécurité du code avec purify
 
   ngOnInit(): void {
@@ -46,24 +45,11 @@ export class FormComponent implements OnInit{
     );
   }
 
-  onFileSelected(event:Event){
-      const target = event.target as HTMLInputElement;
-      const upLoad = target.files;
-      if(upLoad){
-      this.file = upLoad;
-      }
-  }
 
   onSubmit(){
-    let fileUpLoad = this.file[0];
-    if(fileUpLoad !== null){
       let formValue=this.natureForm.value;
-      console.log(fileUpLoad);
-      console.log(formValue);
-      this.pictureNaturesService.addNaturePicture(formValue, fileUpLoad);
+      this.pictureNaturesService.addNaturePicture(formValue);
       this.router.navigateByUrl('/home');
-    }
-
   }
 
 }

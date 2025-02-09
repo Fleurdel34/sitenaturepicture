@@ -12,8 +12,9 @@ export class PictureNaturesService{
 
   constructor(private http : HttpClient){}
 
-  addNaturePicture(formValue: FormGroup, file:File){
-    this.http.post('https://localhost:8080/api/form', {formValue, file},{headers:{'Content-Type' : 'application/json', 'Access-Control-Allow-Origin' : 'https://localhost:8080/api/form'}})
+  addNaturePicture(formValue: FormGroup){
+    this.http.post('https://localhost:8080/api/form', formValue,
+      {headers: new HttpHeaders({'Access-Control-Allow-Origin' : '/'})})
       .pipe(take(1), catchError(err=>{
         throw 'error in source. Details:' + err;
       }))
