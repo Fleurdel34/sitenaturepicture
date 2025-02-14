@@ -11,7 +11,7 @@
     </div>
     <div>
       <label for="image">Insérer une image:</label>
-      <input id="image" type="file" formControlName="image" accept=".jpg, .pdf, .jpeg, .svg, .png" size="5000000" name="image" >
+      <input id="image" type="file" formControlName="filename" accept=".jpg, .pdf, .jpeg, .svg, .png" size="5000000" name="image" >
       <button type="submit" (click)="onSubmit()" [disabled]="natureForm.invalid">Enregistrer</button>
     </div>
   </form>
