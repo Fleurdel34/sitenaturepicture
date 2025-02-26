@@ -37,11 +37,6 @@ export class FormComponent implements OnInit{
     }, {
       updateOn: 'blur'
     })
-    //this.naturePicturePreview$ = this.natureForm.valueChanges.pipe(map(formValue =>({
-    //  ...formValue,
-        
-    //  }))
-    //);
   }
 
 
