@@ -32,24 +32,23 @@ export class FormComponent implements OnInit{
     this.natureForm=this.formBuilder.group({
       title:[null, Validators.required],
       description:[null, Validators.required],
-      filename:[null, [Validators.required, Validators.pattern(this.urlRegex)]]
+      filename:[null, [Validators.required, Validators.pattern(this.urlRegex)]],
+      date: new Date()
     }, {
       updateOn: 'blur'
     })
-
-    this.naturePicturePreview$ = this.natureForm.valueChanges.pipe(map(formValue =>({
-      ...formValue,
-        createdAt: new Date()
-      }))
-    );
+    //this.naturePicturePreview$ = this.natureForm.valueChanges.pipe(map(formValue =>({
+    //  ...formValue,
+        
+    //  }))
+    //);
   }
 
 
   onSubmit(){
-      let formValue=this.natureForm.value;
-      console.log(formValue);
-      this.pictureNaturesService.addNaturePicture(formValue);
-      this.router.navigateByUrl('/home');
+    let formValue=this.natureForm.value;
+    this.pictureNaturesService.addNaturePicture(formValue);
+    this.router.navigateByUrl('/home');
   }
 
 }

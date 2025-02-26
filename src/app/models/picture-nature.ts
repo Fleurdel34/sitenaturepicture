@@ -5,6 +5,6 @@ export class PictureNature{
                 public title: string,
                 public description: string,
                 public image:string,
-                public createdAt: Date) {}
+                public date: Date) {}
 
 }
