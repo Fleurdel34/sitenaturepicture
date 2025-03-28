@@ -1,6 +1,6 @@
 import {Component, OnInit, inject} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {empty, map, Observable} from "rxjs";
+import { Observable} from "rxjs";
 import {PictureNature} from "../models/picture-nature";
 import {Router} from "@angular/router";
 import {PictureNaturesService} from "../services/picture-natures.service";
@@ -32,7 +32,7 @@ export class FormComponent implements OnInit{
     this.natureForm=this.formBuilder.group({
       title:[null, Validators.required],
       description:[null, Validators.required],
-      filename:[null, [Validators.required, Validators.pattern(this.urlRegex)]],
+      imageUrl:[null, [Validators.required, Validators.pattern(this.urlRegex)]],
       date: new Date()
     }, {
       updateOn: 'blur'

@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { PictureNature } from "../models/picture-nature";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {catchError, Observable, take} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 import {FormGroup} from "@angular/forms";
 
 
@@ -17,13 +17,7 @@ export class PictureNaturesService{
       .subscribe();
   }
 
-    getPictureNature(): Observable<PictureNature[]>{
-        return this.http.get<PictureNature[]>('https://localhost:8080/api/form');
-    }
-
-    getPictureNatureById(pictureNatureId:number): Observable<PictureNature>{
-      return this.http.get<PictureNature>(`https://localhost:8080/api/form/${pictureNatureId}`);
-    }
-
-
+  getPictureNatureByTitle(pictureNatureTitle:string): Observable<PictureNature>{
+    return this.http.get<PictureNature>(`https://localhost:8080/api/form/${pictureNatureTitle}`);
+  }
 }
