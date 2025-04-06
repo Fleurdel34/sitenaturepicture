@@ -30,7 +30,7 @@ export class FormComponent implements OnInit{
 
   ngOnInit(): void {
     this.natureForm=this.formBuilder.group({
-      title:[null, Validators.required],
+      title:[null, Validators.required, Validators.pattern(/[a-z]/), Validators.max(7)],
       description:[null, Validators.required],
       imageUrl:[null, [Validators.required, Validators.pattern(this.urlRegex)]],
       date: new Date()

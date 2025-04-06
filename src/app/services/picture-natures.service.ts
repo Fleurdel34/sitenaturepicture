@@ -17,7 +17,7 @@ export class PictureNaturesService{
       .subscribe();
   }
 
-  getPictureNatureByTitle(pictureNatureTitle:string): Observable<PictureNature>{
-    return this.http.get<PictureNature>(`https://localhost:8080/api/form/${pictureNatureTitle}`);
+  getPictureNatureByTitle(pictureNatureTitle:string): Observable<PictureNature[]>{
+    return this.http.get<PictureNature[]>(`https://localhost:8080/api/form/${pictureNatureTitle}`);
   }
 }
