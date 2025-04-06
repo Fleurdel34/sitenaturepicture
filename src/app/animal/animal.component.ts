@@ -25,4 +25,5 @@ export class AnimalComponent implements OnInit{
     this.pictureNature$ = this.data.getPictureNatureByTitle(pictureNatureTitle);
   }
 
+  
 }
