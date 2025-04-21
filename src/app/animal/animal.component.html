@@ -22,11 +22,13 @@
   </div>
 </section>
 <section>
-  <div *ngfor="let picture of pictureNature$ | async" class="picture">
-    <h2>Titre:{{picture.title}}</h2>
-    <p>Description:{{picture.description}}</p>
-    <span>Date:{{picture.date |  date:'ddMMyyyy'}}</span>
-    <img [src]="picture.imageUrl" alt="imgae d'un animarl">
+  <div>
+    <div *ngFor="let item of pictureNature$ |async">
+    <h2>Titre:{{item.title}}</h2>
+    <p>Description:{{item.description}}</p>
+    <span>Date:{{item.date |  date:'ddMMyyyy'}}</span>
+    <img [src]="item.imageUrl" alt="image d'un animarl">
     <button>Agrandir</button>
+    </div>
   </div>
 </section>

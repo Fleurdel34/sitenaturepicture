@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PictureNature } from '../models/picture-nature';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import { PictureNaturesService } from '../services/picture-natures.service';
-import { DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe, NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-animal',
   standalone: true,
-  imports: [DatePipe,],
+  imports: [
+    NgForOf, 
+    AsyncPipe, 
+    DatePipe
+  ],
   templateUrl: './animal.component.html',
   styleUrl: './animal.component.scss'
 })
@@ -21,8 +25,7 @@ export class AnimalComponent implements OnInit{
 
 
   ngOnInit(){
-    let pictureNatureTitle = this.route.snapshot.params['animal'];
-    this.pictureNature$ = this.data.getPictureNatureByTitle(pictureNatureTitle);
+    this.pictureNature$ = this.data.getPictureNatureByTitle('animal');
   }
 
   
