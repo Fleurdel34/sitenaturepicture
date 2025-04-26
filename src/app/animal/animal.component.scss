@@ -1,6 +1,41 @@
-section{
+.section_titre{
     width: 100%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin-bottom: 1%;
+    text-align: justify;
+}
+
+.image_animal{
+    object-fit:contain;
+    height: 25%; 
+    width: 100%;
+    margin-right: 5%;
+}
+
+.section__paragraph{
+    height: 100%;
+    width: 100%;
+    margin-left: 2%;
+}
+
+.card-post{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+}
+
+.post_image{
+    display: flex;
+    flex-direction: column;
+    width:30%;
 }

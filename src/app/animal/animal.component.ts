@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { PictureNature } from '../models/picture-nature';
 import {ActivatedRoute} from "@angular/router";
 import { PictureNaturesService } from '../services/picture-natures.service';
-import { AsyncPipe, DatePipe, NgForOf } from '@angular/common';
+import { AsyncPipe, DatePipe, NgForOf, TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-animal',
@@ -11,7 +11,8 @@ import { AsyncPipe, DatePipe, NgForOf } from '@angular/common';
   imports: [
     NgForOf, 
     AsyncPipe, 
-    DatePipe
+    DatePipe,
+    TitleCasePipe,
   ],
   templateUrl: './animal.component.html',
   styleUrl: './animal.component.scss'

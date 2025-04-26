@@ -1,34 +1,36 @@
 <section class="section_titre">
   <div class="title">
-    <img src="images/PhotoPageAnimal.jpg" alt="oiseau" class="image_animal">
-    <h1 class="titre_principal">Mémoire des Animaux</h1>
-    <p class="section__paragraph">
-      Le changement climatique se produit trop vite pour que les espèces puissent
-      réellement s'adapter, ce qui en fait une des causes majeures
-      (avec la perte/dégradation de l’habitat et l’exploitation subie à travers
-      la chasse et la pêche) de la chute de biodiversité mesurée
-      depuis 50 ans et que les scientifiques qualifient déjà de sixième crise
-      d’extinction des espèces. En effet, au-delà de la figure médiatique
-      de l'ours polaire en détresse sur sa banquise qui rétrécie année après année,
-      des centaines d'animaux subissent déjà les conséquences négatives du
-      réchauffement. Et les scénarios pour l'avenir ne sont pas optimistes :
-      des études suggèrent qu'un tiers des plantes et des animaux pourrait
-      disparaitre d’ici à 2070 sous le poids du changement climatique.
-      <span class="section__span"> Source: Musée National Histoire Naturelle 
-        <a href="https://www.mnhn.fr/fr/quel-est-l-impact-du-changement-climatique-sur-les-animaux">
-        https://www.mnhn.fr/fr/quel-est-l-impact-du-changement-climatique-sur-les-animaux</a> 
-      </span>
-    </p>
+    <img src="/assets/PhotoPageAnimal.jpg" alt="bourdon" class="image_animal">
+    <div>
+      <h1 class="titre_principal">Mémoire des Animaux</h1>
+      <p class="section__paragraph">
+        Le changement climatique se produit trop vite pour que les espèces puissent
+        réellement s'adapter, ce qui en fait une des causes majeures
+        (avec la perte/dégradation de l’habitat et l’exploitation subie à travers
+        la chasse et la pêche) de la chute de biodiversité mesurée
+        depuis 50 ans et que les scientifiques qualifient déjà de sixième crise
+        d’extinction des espèces. En effet, au-delà de la figure médiatique
+        de l'ours polaire en détresse sur sa banquise qui rétrécie année après année,
+        des centaines d'animaux subissent déjà les conséquences négatives du
+        réchauffement. Et les scénarios pour l'avenir ne sont pas optimistes :
+        des études suggèrent qu'un tiers des plantes et des animaux pourrait
+        disparaitre d’ici à 2070 sous le poids du changement climatique.
+        <span class="section__span"> Source: Musée National Histoire Naturelle 
+          <a href="https://www.mnhn.fr/fr/quel-est-l-impact-du-changement-climatique-sur-les-animaux">
+          https://www.mnhn.fr/fr/quel-est-l-impact-du-changement-climatique-sur-les-animaux</a> 
+        </span>
+      </p>
+    </div>
   </div>
 </section>
-<section>
-  <div>
-    <div *ngFor="let item of pictureNature$ |async">
-    <h2>Titre:{{item.title}}</h2>
-    <p>Description:{{item.description}}</p>
-    <span>Date:{{item.date |  date:'ddMMyyyy'}}</span>
-    <img [src]="item.imageUrl" alt="image d'un animarl">
-    <button>Agrandir</button>
+<section class="section__paragraph">
+  <div class="card_post">
+    <div *ngFor="let item of pictureNature$ |async" class="post_image">
+      <h2>Titre: {{item.title | titlecase}}</h2>
+      <p>Description: {{item.description}}</p>
+      <span>Date: {{item.date |  date:'dd/MM/yyyy'}}</span>
+      <img [src]="item.imageUrl" alt="image d'un animal">
+      <button>Agrandir</button>
     </div>
   </div>
 </section>
