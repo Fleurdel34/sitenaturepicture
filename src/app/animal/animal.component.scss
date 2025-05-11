@@ -14,6 +14,10 @@
     text-align: justify;
 }
 
+.title_main{
+    margin-left: 24px;
+}
+
 .image_animal{
     object-fit:contain;
     height: 25%; 
@@ -27,7 +31,7 @@
     margin-left: 2%;
 }
 
-.card-post{
+.card_post{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -37,5 +41,30 @@
 .post_image{
     display: flex;
     flex-direction: column;
-    width:30%;
+    align-items: center;
+    width:15%;
+    border-style: inset;
+    padding: 15px;
+    margin: 15px;
+}
+
+.title_card{
+    padding: 0;
+    margin:0;
+    font-size: 16px;
+}
+
+.description_card{
+    padding: 0;
+    margin:0;
+    font-size: 16px;
+}
+
+.button_card{
+    width: 30%;
+    border-radius: 10px;
+    margin: 20px;
+    &:hover{
+        background-color: aqua;
+    }
 }

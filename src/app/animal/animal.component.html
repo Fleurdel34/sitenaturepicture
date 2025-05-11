@@ -2,7 +2,7 @@
   <div class="title">
     <img src="/assets/PhotoPageAnimal.jpg" alt="bourdon" class="image_animal">
     <div>
-      <h1 class="titre_principal">Mémoire des Animaux</h1>
+      <h1 class="title_main">Mémoire des Animaux</h1>
       <p class="section__paragraph">
         Le changement climatique se produit trop vite pour que les espèces puissent
         réellement s'adapter, ce qui en fait une des causes majeures
@@ -26,11 +26,11 @@
 <section class="section__paragraph">
   <div class="card_post">
     <div *ngFor="let item of pictureNature$ |async" class="post_image">
-      <h2>Titre: {{item.title | titlecase}}</h2>
-      <p>Description: {{item.description}}</p>
+      <h2 class="title_card"> {{item.title | titlecase}}</h2>
+      <p class="description_card">Description: {{item.description}}</p>
       <span>Date: {{item.date |  date:'dd/MM/yyyy'}}</span>
       <img [src]="item.imageUrl" alt="image d'un animal">
-      <button>Agrandir</button>
+      <button class="button_card">Agrandir</button>
     </div>
   </div>
 </section>
