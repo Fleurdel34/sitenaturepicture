@@ -36,6 +36,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     width:100%;
+
 }
 
 .post_image{
@@ -67,4 +68,10 @@
     &:hover{
         background-color: aqua;
     }
+}
+
+.img_back{
+    margin-top:2rem;
+    width:90px;
+    height: 90px;
 }

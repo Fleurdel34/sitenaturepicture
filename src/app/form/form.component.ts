@@ -20,6 +20,7 @@ export class FormComponent implements OnInit{
   natureForm!: FormGroup;
   naturePicturePreview$!: Observable<PictureNature>;
   urlRegex!:RegExp;
+  imageBase64: string = '';
 
   constructor(private formBuilder:FormBuilder, private router:Router, private pictureNaturesService: PictureNaturesService){
 
@@ -39,6 +40,17 @@ export class FormComponent implements OnInit{
     })
   }
 
+  convertFileToBase64(event: Event) {
+  const file = (event.target as HTMLInputElement).files?.[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    
+    reader.onload = () => {
+      this.natureForm.patchValue({ imageUrl: reader.result as string }); // Mettre à jour le champ
+    };
+  }
+}
 
   onSubmit(){
     let formValue=this.natureForm.value;

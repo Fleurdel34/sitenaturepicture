@@ -1,0 +1,70 @@
+.section_titre{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin-bottom: 1%;
+    text-align: justify;
+}
+
+.title_main{
+    margin-left: 24px;
+}
+
+.image_animal{
+    object-fit:contain;
+    height: 25%; 
+    width: 100%;
+    margin-right: 5%;
+}
+
+.section__paragraph{
+    height: 100%;
+    width: 100%;
+    margin-left: 2%;
+}
+
+.card_post{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+}
+
+.post_image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:15%;
+    border-style: inset;
+    padding: 15px;
+    margin: 15px;
+}
+
+.title_card{
+    padding: 0;
+    margin:0;
+    font-size: 16px;
+}
+
+.description_card{
+    padding: 0;
+    margin:0;
+    font-size: 16px;
+}
+
+.button_card{
+    width: 30%;
+    border-radius: 10px;
+    margin: 20px;
+    &:hover{
+        background-color: aqua;
+    }
+}
