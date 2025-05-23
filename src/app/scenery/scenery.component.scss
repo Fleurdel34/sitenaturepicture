@@ -18,7 +18,7 @@
     margin-left: 24px;
 }
 
-.image_animal{
+.image_scenery{
     object-fit:contain;
     height: 25%; 
     width: 100%;
@@ -67,4 +67,10 @@
     &:hover{
         background-color: aqua;
     }
+}
+
+.img_back{
+    margin-top:2rem;
+    width:90px;
+    height: 90px;
 }
