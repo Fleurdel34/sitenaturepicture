@@ -14,14 +14,14 @@
 }
 
 .image{
-    padding: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
     width: 30%;
 }
 
 .image_fleur{
-    object-fit:contain;
-    height:54%; 
-    width: 100%;
+    height:56%;
+    width: 99%;
 }
 
 .image_title{
@@ -37,7 +37,7 @@
     font-size:24px;
 }
 
-.h1{
+.title_main{
     margin-top: 0;
     margin-bottom: 0;
 }

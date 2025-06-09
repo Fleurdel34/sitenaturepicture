@@ -9,26 +9,43 @@
 .title{
     display: flex;
     flex-direction: row;
-    width: 95%;
-    margin-bottom: 1%;
+    width: 100%;
     text-align: justify;
 }
 
-.title_main{
-    margin-left: 24px;
+.image{
+    padding: 0;
+    width: 30%;
 }
 
 .image_scenery{
     object-fit:contain;
-    height: 25%; 
+    height:92%; 
     width: 100%;
-    margin-right: 5%;
+}
+
+.image_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: justify;
+    width: 70%;
+}
+
+.titre_principal{
+    width: 75%;
+    font-size:24px;
+}
+
+.title_main{
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .section__paragraph{
-    height: 100%;
-    width: 100%;
-    margin-left: 2%;
+    width: 90%;
+    padding-top: 1rem;
+    font-size: 17px;
 }
 
 .card_post{
