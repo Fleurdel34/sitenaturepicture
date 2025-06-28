@@ -16,6 +16,7 @@
 .image{
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 0.5rem;
     width: 30%;
 }
 
@@ -44,8 +45,11 @@
 
 .section__paragraph{
     width: 90%;
-    padding-top: 1rem;
     font-size: 17px;
+}
+
+.first_paragraph{
+    margin-top: 1.9rem;
 }
 
 .card_post{
