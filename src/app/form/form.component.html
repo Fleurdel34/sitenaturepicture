@@ -1,6 +1,6 @@
 <section>
   <h2>NOUVEAU NATUREPICTURE</h2>
-  <form [formGroup]="natureForm" enctype="multipart/form-data">
+  <form [formGroup]="natureForm" enctype="multipart/form-data" (ngSubmit)="onSubmit()">
     <div>
       <label for="title">Titre: <span>(saisir en lettres minuscules: flower, scenery, vegetal ou animal)</span></label>
       <input id="title" name="title" type="text" formControlName="title">
@@ -11,8 +11,9 @@
     </div>
     <div>
       <label for="image">Insérer une image:</label>
-      <input id="image" type="file" (change)="convertFileToBase64($event)" formControlName="imageUrl" accept=".jpg, .pdf, .jpeg, .svg, .png" size="5000000" name="image" >
-      <button type="submit" (click)="onSubmit()" [disabled]="natureForm.invalid">Enregistrer</button>
+      <input id="image" type="file" (change)="convertFileToBase64($event)" (change)="onSizeFile($event)" formControlName="imageUrl" accept=".jpg, .pdf, .jpeg, .svg, .png" size="5000000" name="image" >
+      <p>{{ messageFile }}</p>
+      <button type="submit" [disabled]="natureForm.invalid">Enregistrer</button>
     </div>
   </form>
 </section>
