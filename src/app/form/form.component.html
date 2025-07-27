@@ -11,7 +11,7 @@
     </div>
     <div>
       <label for="image">Insérer une image:</label>
-      <input id="image" type="file" (change)="convertFileToBase64($event)" (change)="onSizeFile($event)" formControlName="imageUrl" accept=".jpg, .pdf, .jpeg, .svg, .png" size="5000000" name="image" >
+      <input id="image" type="file" (change)="convertFileToBase64($event)" formControlName="imageUrl" accept=".jpg, .pdf, .jpeg, .svg, .png" size="5000000" name="image" >
       <p>{{ messageFile }}</p>
       <button type="submit" [disabled]="natureForm.invalid">Enregistrer</button>
     </div>
