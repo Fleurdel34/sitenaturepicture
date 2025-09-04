@@ -11,8 +11,8 @@
     </div>
     <div>
       <label for="image">Insérer une image:</label>
-      <input id="image" type="file" (change)="convertFileToBase64($event)" formControlName="imageUrl" name="image" 
-      accept=".jpg,.png,.pdf,.jpeg" [multiple]="false">
+      <input id="image" type="file" (change)="convertFileToBase64($event)" name="image" 
+      accept=".jpg,.png,.pdf,.jpeg" [multiple]="false" required>
       <button type="submit" [disabled]="natureForm.invalid" (click)="onSubmit()">Enregistrer</button>
     </div>
   </form>
