@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 2%;
 }
 
 .title{
@@ -11,18 +12,6 @@
     flex-direction: row;
     width: 100%;
     text-align: justify;
-}
-
-.image{
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.5rem;
-    width: 30%;
-}
-
-.image_animal{
-    height:56%;
-    width: 99%;
 }
 
 .image_title{
@@ -35,7 +24,7 @@
 
 .first_title{
     width: 75%;
-    font-size:24px;
+    font-size:20px;
 }
 
 .title_main{
@@ -45,7 +34,7 @@
 
 .section__paragraph{
     width: 90%;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .first_paragraph{
@@ -54,8 +43,9 @@
 
 .card_post{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
     width:100%;
 }
 
@@ -63,16 +53,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width:15%;
-    border-style: inset;
-    padding: 15px;
+    width:30%;
+    height: 10%;
+    border: 1px solid rgb(234, 228, 228);
+    box-shadow: 10px 5px 5px rgb(169, 205, 180);
+    padding-top: 10px;
     margin: 15px;
 }
 
 .title_card{
     padding: 0;
     margin:0;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .description_card{
@@ -82,16 +74,14 @@
 }
 
 .button_card{
-    width: 35%;
+    width: 25%;
     border-radius: 10px;
     margin: 20px;
     &:hover{
-        background-color: aqua;
+        background-color:rgb(169, 205, 180);
     }
 }
 
-.img_back{
-    margin-top:2rem;
-    width:90px;
-    height: 90px;
-}
+
+
+
