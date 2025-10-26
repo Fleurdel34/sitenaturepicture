@@ -1,0 +1,54 @@
+.section__paragraph{
+    width: 90%;
+    font-size: 15px;
+}
+
+.card_post{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width:100%;
+}
+
+.post_image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:30%;
+    height: 10%;
+    border: 1px solid rgb(234, 228, 228);
+    box-shadow: 10px 5px 5px rgb(169, 205, 180);
+    padding-top: 10px;
+    margin: 15px;
+}
+
+.title_card{
+    padding: 0;
+    margin:0;
+    font-size: 26px;
+}
+
+.description_card{
+    padding: 10px;
+    margin:0;
+    font-size: 20px;
+}
+
+.image_card{
+    width:80%;
+}
+
+.dateCard{
+    font-size: 20px;
+    padding: 10px;
+}
+
+.button_card{
+    width: 25%;
+    border-radius: 10px;
+    margin: 20px;
+    &:hover{
+        background-color:rgb(169, 205, 180);
+    }
+}

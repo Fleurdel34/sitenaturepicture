@@ -20,4 +20,8 @@ export class PictureNaturesService{
   getPictureNatureByTitle(pictureNatureTitle:string): Observable<PictureNature[]>{
     return this.http.get<PictureNature[]>(`http://localhost:8080/api/form/${pictureNatureTitle}`);
   }
+
+  getPictureNatureById(id:number): Observable<PictureNature>{
+    return this.http.get<PictureNature>(`http://localhost:8080/api/card/${id}`);
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PictureNature } from '../models/picture-nature';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { PictureNaturesService } from '../services/picture-natures.service';
 import { AsyncPipe, DatePipe, NgForOf, TitleCasePipe } from '@angular/common';
 
@@ -18,9 +18,10 @@ import { AsyncPipe, DatePipe, NgForOf, TitleCasePipe } from '@angular/common';
 })
 export class SceneryComponent implements OnInit{
 
+
   pictureNature$!:Observable<PictureNature[]>;
 
-  constructor( private route:ActivatedRoute, private data:PictureNaturesService) {
+  constructor( private route:ActivatedRoute, private data:PictureNaturesService, private router:Router) {
   }
 
 
@@ -28,5 +29,8 @@ export class SceneryComponent implements OnInit{
     this.pictureNature$ = this.data.getPictureNatureByTitle('scenery');
   }
 
-  
+  viewPicture(id:number) {
+    this.router.navigateByUrl(`card/${id}`);
+  }
+
 }
