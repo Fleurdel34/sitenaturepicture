@@ -57,16 +57,17 @@ convertFileToBase64(event: Event) {
         this.fileSizeMax = true;
       }
 
-      if(this.fileSizeMax === false){
+      if(size < maxSize){
         const reader = new FileReader();
         reader.onload = () => {
           this.imageBase64 = reader.result as string;
           this.natureForm.addControl('imageUrl', new FormControl(this.imageBase64));
         }
         reader.readAsDataURL(file);
+        this.fileSizeMax=false;
       }
     } 
-  return this.fileSizeMax; 
+  return this.fileSizeMax;  
 }
 
 

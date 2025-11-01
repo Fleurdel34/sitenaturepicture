@@ -4,6 +4,21 @@
     justify-content: center;
     align-items: center;
 }
+.decicated{
+  font-size: 14px;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 35px;
+  display: flex;
+  justify-content:center;
+  text-align: center;
+  span{
+    margin-top: 48px;
+  }
+  img{
+    margin-left: 15px;
+  }
+}
 
 img{
     width: 25%;
