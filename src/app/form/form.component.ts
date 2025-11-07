@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {PictureNaturesService} from "../services/picture-natures.service";
+import { NgClass } from '@angular/common';
 
 
 
@@ -11,7 +12,8 @@ import {PictureNaturesService} from "../services/picture-natures.service";
   standalone: true,
     imports: [
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgClass
 ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
@@ -22,6 +24,7 @@ export class FormComponent implements OnInit{
   imageBase64: string = '';
   messageFile : string ="";
   fileSizeMax = false;
+  disabledButton = true;
 
   constructor(private formBuilder:FormBuilder, private router:Router, 
     private pictureNaturesService: PictureNaturesService){
@@ -41,8 +44,8 @@ export class FormComponent implements OnInit{
   }
 
 convertFileToBase64(event: Event) {
-    const input = (event.target as HTMLInputElement)
-    if(!input.files || input.files.length ===0){
+    const input = (event.target as HTMLInputElement);
+    if(!input.files || input.files.length === 0){
       return;
     }
 
@@ -55,6 +58,7 @@ convertFileToBase64(event: Event) {
       if(size > maxSize){
         alert('Fichier trop volumineux!');
         this.fileSizeMax = true;
+        this.disabledButton = true;
       }
 
       if(size < maxSize){
@@ -65,19 +69,23 @@ convertFileToBase64(event: Event) {
         }
         reader.readAsDataURL(file);
         this.fileSizeMax=false;
+        this.disabledButton =false;
       }
     } 
-  return this.fileSizeMax;  
+  return this.fileSizeMax, this.disabledButton;  
 }
 
 
 onSubmit(){
   let formValue = this.natureForm.value;
-  if(this.fileSizeMax === false){
+  if(this.fileSizeMax === false && this.disabledButton === false){
+    console.log(this.disabledButton);
     this.pictureNaturesService.addNaturePicture(formValue);
     this.natureForm.reset();
     this.router.navigateByUrl('/home');
   }
 }
+
+
 
 }

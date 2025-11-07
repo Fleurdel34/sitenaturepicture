@@ -51,4 +51,15 @@ button{
   background-color: aqua;
   margin-top: 2rem;
   margin-bottom: 5rem;
+  color:grey;
+}
+
+.buttonActive{
+  width:15%;
+  background-color: aqua;
+  color: black;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  transform: translate(1px, 1px);
+  box-shadow: lightgray 0 0 5px;
 }
