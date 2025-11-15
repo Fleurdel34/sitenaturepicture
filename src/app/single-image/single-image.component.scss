@@ -1,5 +1,5 @@
 .section__paragraph{
-    width: 90%;
+    width: 100%;
     font-size: 15px;
 }
 
@@ -18,9 +18,9 @@
     width:30%;
     height: 10%;
     border: 1px solid rgb(234, 228, 228);
-    box-shadow: 10px 5px 5px rgb(169, 205, 180);
+    box-shadow: 5px 5px 5px 5px rgb(169, 205, 180);
     padding-top: 10px;
-    margin: 15px;
+    margin: 15px 15px 35px 15px;
 }
 
 .title_card{
@@ -30,7 +30,7 @@
 }
 
 .description_card{
-    padding: 10px;
+    padding-bottom: 5px;
     margin:0;
     font-size: 20px;
 }
@@ -40,8 +40,8 @@
 }
 
 .dateCard{
-    font-size: 20px;
-    padding: 10px;
+    font-size: 18px;
+    padding-bottom: 10px;
 }
 
 .button_card{
