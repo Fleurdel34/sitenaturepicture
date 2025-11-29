@@ -7,6 +7,7 @@ import {FlowerComponent} from "./flower/flower.component";
 import {SceneryComponent} from "./scenery/scenery.component";
 import {FormComponent} from "./form/form.component";
 import { SingleImageComponent } from './single-image/single-image.component';
+import { ConnectionComponent } from './connection/connection.component';
 
 
 export const routes: Routes = [
@@ -18,4 +19,5 @@ export const routes: Routes = [
     {path: 'flower', component: FlowerComponent},
     {path: 'scenery', component: SceneryComponent},
     {path: 'card/:id', component: SingleImageComponent},
+    {path: 'connection', component: ConnectionComponent}
 ];

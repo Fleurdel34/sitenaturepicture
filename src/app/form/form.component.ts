@@ -79,7 +79,6 @@ convertFileToBase64(event: Event) {
 onSubmit(){
   let formValue = this.natureForm.value;
   if(this.fileSizeMax === false && this.disabledButton === false){
-    console.log(this.disabledButton);
     this.pictureNaturesService.addNaturePicture(formValue);
     this.natureForm.reset();
     this.router.navigateByUrl('/home');

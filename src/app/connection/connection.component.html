@@ -1,0 +1,22 @@
+<section>
+    <div>
+        <h2 class="title">Connectez-vous ou Créez un compte pour ajouter une photo</h2>
+    </div>
+    <form [formGroup]="connectionForm">
+        <div>
+            <label for="email">Email:</label>
+            <input id="email" type="email" name="email" formControlName="email">
+        </div>
+        <div>
+            <label for="password">Mot de passe:</label>
+            <input id="password" type="password" name="password" formControlName="password">
+        </div>
+        <div>
+            <button (click)="onLogin()" [disabled]="connectionForm.invalid" [ngClass]="{'buttonActive': connectionForm.valid }">Se connecter</button>
+        </div>
+        <div class="createdAccount">
+            <button (click)="accountForm()" [disabled]="connectionForm.valid" [ngClass]="{'buttonActive': connectionForm.invalid }">Créez un compte</button>
+        </div>
+    </form>
+
+</section>
