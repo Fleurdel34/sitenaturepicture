@@ -1,0 +1,41 @@
+<section>
+    <div>
+        <h2 class="title">Connectez-vous ou Créez un compte pour ajouter une photo</h2>
+    </div>
+    <form [formGroup]="accountForm">
+        <div>
+            <label for="lastname">Nom:</label>
+            <input id="lastname" type="text" name="lastname" formControlName="lastname">
+        </div>
+        <div>
+            <label for="firstname">Prénom:</label>
+            <input id="firstname" type="text" name="firstname" formControlName="firstname">
+        </div>
+        <div>
+            <label for="birthdate">Date de naissance:</label>
+            <input id="birthdate" type="date" name="birthdate" formControlName="birthdate">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input id="email" type="email" name="email" formControlName="email">
+        </div>
+        <div>
+            <label for="password">Mot de passe:</label>
+            <input id="password" type="password" name="password" formControlName="password">
+        </div>
+        <div>
+            <label for="confirmPassword">Confirmer le mot de passe:</label>
+            <input id="confirmPassword" type="password" name="confirmPassword" formControlName="confirmPassword">
+            @if (accountForm.hasError("passwordMismatch")) {
+                <p class="error">Les deux mots de passe ne sont pas identiques.</p>
+            }
+        </div>
+        <!-- @if(calculAgeUser(accountForm.get('birthdate')?.value) === false) {
+            <p class="error">Vous devez avoir au moins 18 ans pour créer un compte.</p>
+        } -->
+        <div>
+            <button (click)="onCreateAccount()" [disabled]="accountForm.invalid" [ngClass]="{'buttonActive': accountForm.valid }"> Créer un compte</button>
+        </div>
+    </form>
+
+</section>

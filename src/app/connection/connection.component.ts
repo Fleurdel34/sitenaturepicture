@@ -20,24 +20,24 @@ constructor(private formBuilder:FormBuilder, private router: Router, private aut
 
 /*créer la regex pour les emails+password*/
 
-ngOnInit(): void {
-  this.connectionForm=this.formBuilder.group({
-    email:[null, [Validators.required]],
-    password:[null,[Validators.required]]
-  }, {updateOn:'blur'});
-}
+  ngOnInit(): void {
+    this.connectionForm=this.formBuilder.group({
+      email:[null, [Validators.required]],
+      password:[null,[Validators.required]]
+    }, {updateOn:'blur'});
+  }
 
-/*composant, route, service à créer*/
-accountForm() {
-  this.router.navigateByUrl('/accountForm');
-}
+  /*composant, route, service à créer*/
+  accountForm() {
+    this.router.navigateByUrl('/accountForm');
+  }
 
-/*A finir avec le service et mettre en place le back penser au token interceptors et guards*/                             
-onLogin() {
-  let formValue= this.connectionForm.value;
-  this.authService.connectionAccount(formValue);
-  /*mettre l'id?*/
-  this.router.navigateByUrl('/form');
-  this.connectionForm.reset();
-}
+  /*A finir avec le service et mettre en place le back penser au token interceptors et guards*/                             
+  onLogin() {
+    let formValue= this.connectionForm.value;
+    this.authService.connectionAccount(formValue);
+    /*mettre l'id?*/
+    this.router.navigateByUrl('/form');
+    this.connectionForm.reset();
+  }
 }

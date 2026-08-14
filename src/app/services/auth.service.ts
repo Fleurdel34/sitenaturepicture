@@ -15,4 +15,9 @@ export class AuthService {
       .subscribe()
   }
 
+  createAccount(formValue: FormGroup) {
+    this.http.post('http://localhost:8080/api/auth/signup', formValue)
+      .subscribe()
+  }
+
 }
