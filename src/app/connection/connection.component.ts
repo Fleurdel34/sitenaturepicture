@@ -22,12 +22,12 @@ constructor(private formBuilder:FormBuilder, private router: Router, private aut
 
   ngOnInit(): void {
     this.connectionForm=this.formBuilder.group({
-      email:[null, [Validators.required]],
+      email:[null, [Validators.required, Validators.email]],
       password:[null,[Validators.required]]
     }, {updateOn:'blur'});
   }
 
-  /*composant, route, service à créer*/
+  
   accountForm() {
     this.router.navigateByUrl('/accountForm');
   }

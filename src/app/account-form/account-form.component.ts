@@ -29,15 +29,16 @@ export class AccountFormComponent implements OnInit {
     }, {validators: [passwordMatchValidator], updateOn:'blur'});
   }
 
+  /*créer la regex pour les emails+password*/
 
-  /*verifier que l'utilisateur est âgé de 18 ans*/
-
-  /*calculAgeUser(birthdate: Date | null): boolean {
+  calculAgeUser(birthdate: Date | null): boolean {
     const today = Date.now();
-    const age = Math.floor((today - birthdate!.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
-    console.log('Age de l\'utilisateur :', age);
+    const calculatedBirthdate = new Date(birthdate!);
+    const age = Math.floor((today - calculatedBirthdate.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
     return age >= 18;
-  }*/
+  }
+
+    /*A finir avec le service et mettre en place le back penser au token interceptors et guards*/ 
 
   onCreateAccount() {
     let formValue= this.accountForm.value;

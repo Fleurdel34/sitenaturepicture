@@ -1,3 +1,76 @@
-div{
-    margin:2rem;
+.section-form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.title{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.account-form{
+    display:flex;
+    flex-direction:column;
+    width:25%;
+    margin-bottom:1rem;
+}
+
+.label-input{
+    display:flex;
+    justify-content:space-between;
+    margin:1rem;
+    width:80%;
+}
+
+.label{
+    margin-right:1rem;
+}
+
+.input{
+    width:50%;
+    height:2rem;
+}
+
+.label-confirmPassword{
+    margin-right:1rem;
+}
+
+.input-confirmPassword{
+    width:56%;
+    height:2rem;
+}
+
+.button-createAccount{
+    display:flex;
+    justify-content:center;
+}
+
+button{
+    background-color: #bebcbc;
+    border-radius: 5px;
+    color:black;
+    width:10rem;
+    height:2rem;
+    margin-top:1rem;
+    margin-bottom:2rem;
+}
+
+.buttonActive{
+    background-color: #7fffD4;
+    color: black;
+}
+
+.error-message{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    margin-left:1rem;
+}
+
+.error{
+    color:red;
+    font-weight:bold;
+    font-size:1rem;
 }
