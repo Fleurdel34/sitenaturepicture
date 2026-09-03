@@ -9,6 +9,7 @@ import {FormComponent} from "./form/form.component";
 import { SingleImageComponent } from './single-image/single-image.component';
 import { ConnectionComponent } from './connection/connection.component';
 import { AccountFormComponent } from './account-form/account-form.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 export const routes: Routes = [
@@ -21,5 +22,6 @@ export const routes: Routes = [
     {path: 'scenery', component: SceneryComponent},
     {path: 'card/:id', component: SingleImageComponent},
     {path: 'connection', component: ConnectionComponent},
-    {path: 'accountForm', component: AccountFormComponent}
+    {path: 'accountForm', component: AccountFormComponent},
+    {path: '**', component: PageNotFoundComponent}
 ];
