@@ -1,0 +1,27 @@
+.page-not-found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.page-not-found-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.page-not-found-title{
+    margin:0px;
+}
+
+.page-not-found-image{
+    width: 25%;
+    height: 500px;
+    margin:0px;
+}
