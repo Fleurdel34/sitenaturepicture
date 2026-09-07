@@ -51,7 +51,20 @@ form{
             margin-top: 0;  
         }
     }
+    .error-message{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0px;
+    }
+    .error{
+        color: red;
+        font-size: 0.8rem;
+        width: 27%;
+    }
 }
+
+
 
 
 

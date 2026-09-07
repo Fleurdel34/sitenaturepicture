@@ -7,9 +7,19 @@
             <label for="email">Email:</label>
             <input id="email" type="email" name="email" formControlName="email">
         </div>
-        <div>
+        <div class="error-message">
+            @if(connectionForm.hasError('pattern', 'email')){
+                <p class="error">Veuillez entrer un email valide.</p>
+            }
+        </div>
+        <div >
             <label for="password">Mot de passe:</label>
             <input id="password" type="password" name="password" formControlName="password">
+        </div>
+        <div class="error-message">
+            @if(connectionForm.hasError('pattern', 'password')){
+                <p class="error">Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.</p>
+            }
         </div>
         <div>
             <button (click)="onLogin()" [disabled]="connectionForm.invalid" [ngClass]="{'buttonActive': connectionForm.valid }">Se connecter</button>

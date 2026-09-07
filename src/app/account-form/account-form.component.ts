@@ -15,6 +15,8 @@ import { passwordMatchValidator } from '../validators/password-match.validator';
 export class AccountFormComponent implements OnInit {
 
   accountForm!: FormGroup;
+  RegexEmail:RegExp=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  RegexPassword:RegExp=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
   
   constructor(private formBuilder:FormBuilder, private router: Router, private authService: AuthService){}
 
@@ -23,13 +25,11 @@ export class AccountFormComponent implements OnInit {
       lastname:[null, [Validators.required]],
       firstname:[null, [Validators.required]],
       birthdate:[null, [Validators.required]],
-      email:[null, [Validators.required, Validators.email]],
-      password:[null, [Validators.required, Validators.minLength(8)]],
+      email:[null, [Validators.required, Validators.email, Validators.pattern(this.RegexEmail)]],
+      password:[null, [Validators.required, Validators.minLength(8), Validators.pattern(this.RegexPassword)]],
       confirmPassword:[null, [Validators.required, Validators.minLength(8)]]
     }, {validators: [passwordMatchValidator], updateOn:'blur'});
   }
-
-  /*créer la regex pour les emails+password*/
 
   calculAgeUser(birthdate: Date | null): boolean {
     const today = Date.now();

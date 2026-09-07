@@ -15,15 +15,15 @@ import { NgClass } from '@angular/common';
 export class ConnectionComponent  implements OnInit{
 
 connectionForm!: FormGroup;
+RegexEmail:RegExp=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+RegexPassword:RegExp=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 constructor(private formBuilder:FormBuilder, private router: Router, private authService: AuthService){}
 
-/*créer la regex pour les emails+password*/
-
   ngOnInit(): void {
     this.connectionForm=this.formBuilder.group({
-      email:[null, [Validators.required, Validators.email]],
-      password:[null,[Validators.required]]
+      email:[null, [Validators.required, Validators.email, Validators.pattern(this.RegexEmail)]],
+      password:[null,[Validators.required, Validators.pattern(this.RegexPassword)]]
     }, {updateOn:'blur'});
   }
 
