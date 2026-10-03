@@ -19,9 +19,19 @@
             <label for="email" class="label">Email:</label>
             <input id="email" type="email" name="email" formControlName="email" class="input">
         </div>
+        <div class="error-message">
+            @if(accountForm.hasError('pattern', 'email')){
+                <p class="error">Veuillez entrer un email valide.</p>
+            }
+        </div>
         <div class="label-input">
             <label for="password" class="label">Mot de passe:</label>
             <input id="password" type="password" name="password" formControlName="password" class="input">
+        </div>
+        <div class="error-message">
+            @if(accountForm.hasError('pattern', 'password')){
+                <p class="error">Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.</p>
+            }
         </div>
         <div class="label-input">
             <label for="confirmPassword" class="label-confirmPassword">Confirmer le mot de passe:</label>
@@ -39,7 +49,7 @@
         </div>
             
         <div class="button-createAccount">
-            <button (click)="onCreateAccount()" [disabled]="accountForm.invalid" [ngClass]="{'buttonActive': accountForm.valid }"> Créer un compte</button>
+            <button (click)="onCreateAccount()" [disabled]="accountForm.invalid && calculAgeUser(accountForm.get('birthdate')?.value) !== false" [ngClass]="{'buttonActive': accountForm.valid && calculAgeUser(accountForm.get('birthdate')?.value) === true}"> Créer un compte</button>
         </div>
     </form>
 
