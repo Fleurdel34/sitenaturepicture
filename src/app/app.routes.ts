@@ -23,5 +23,6 @@ export const routes: Routes = [
     {path: 'card/:id', component: SingleImageComponent},
     {path: 'connection', component: ConnectionComponent},
     {path: 'accountForm', component: AccountFormComponent},
+    {path: 'accountForm/:id', component: AccountFormComponent},
     {path: '**', component: PageNotFoundComponent}
 ];
